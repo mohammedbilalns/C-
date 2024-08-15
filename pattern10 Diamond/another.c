@@ -1,17 +1,17 @@
 #include <stdio.h>
+
 int main()
 {
-    int i, j, lineCount;
+    int linecount, i, j, k = 0;
     printf("Enter the number of lines: ");
-    scanf("%d", &lineCount);
+    scanf("%d", &linecount);
 
-    for (i = 1; i <= lineCount; i++)
+    for (i = 1; i <= 2 * linecount - 1; i++)
     {
-
-        for (j = 1; j <= 2 * lineCount - 1; j++)
+        (i <= linecount) ? k++ : k--;
+        for (j = 1; j <= 2 * linecount - 1; j++)
         {
-
-            if (j >= i && j <= 2 * lineCount - i)
+            if (j >= linecount - k + 1 && j <= linecount + k - 1)
             {
                 printf("*");
             }
@@ -20,7 +20,6 @@ int main()
                 printf(" ");
             }
         }
-
         printf("\n");
     }
 }

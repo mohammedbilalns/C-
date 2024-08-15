@@ -7,11 +7,9 @@ int main()
 
     for (i = 1; i <= lineCount; i++)
     {
-
-        for (j = 1; j <= 2 * lineCount - 1; j++)
+        for (j = 1; j <= 2 * lineCount; j++)
         {
-
-            if (j >= i && j <= 2 * lineCount - i)
+            if (j >= lineCount - i + 1 && j <= 2 * lineCount - i + 1)
             {
                 printf("*");
             }
@@ -20,7 +18,6 @@ int main()
                 printf(" ");
             }
         }
-
         printf("\n");
     }
 }

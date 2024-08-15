@@ -7,20 +7,18 @@ int main()
 
     for (i = 1; i <= lineCount; i++)
     {
-
-        for (j = 1; j <= 2 * lineCount - 1; j++)
+        for (j = 1; j <= lineCount; j++)
         {
 
-            if (j >= i && j <= 2 * lineCount - i)
+            if (j <= i)
             {
-                printf("*");
+            j % 2 == 0 ? printf("0") : printf("1");
             }
             else
             {
                 printf(" ");
             }
         }
-
         printf("\n");
     }
 }
