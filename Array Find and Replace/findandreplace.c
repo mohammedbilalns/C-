@@ -20,5 +20,16 @@ int main(){
 	for(int i=0;i< arrSize;i++){
 		scanf("%d",&arr[i]);
 	}
-	printf("Enter the element to delete: ")
+	printf("Enter the element to find: ");
+	scanf("%d",&elementToFind);
+	printf("Enter the element to replace: ");
+	scanf("%d",&elementToReplace);
+	for(int i=0;i<=arrSize;i++){
+		if(elementToFind == arr[i]){
+			arr[i] = elementToReplace;
+		}
+	}
+	for(int i=0;i<arrSize;i++){
+		printf("%d",arr[i]);
+	}
 }
