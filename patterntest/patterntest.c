@@ -1,24 +1,33 @@
 #include <stdio.h>
 
 int main() {
-  int i, j, k;
-  int arr[] = {1, 2, 0, 0, 4, 0, 5, 6, 0};
-  int n = sizeof(arr) / sizeof(arr[0]);
-  int newArr[n];
-  for (i = 0; i < n; i++) {
-    newArr[i] = 0;
-  }
+  int n;
+  printf("Enter a value for n: ");
+  scanf("%d", &n);
 
-  k = 8;
-  for (j = n - 1; j >= 0; j--) {
-    if (arr[j] != 0) {
-      newArr[k--] = arr[j];
+  int k = 1;
+  int rows = n;
+  int cols = n;
+
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+      printf("%d", k);
+      if (j < cols - 1) {
+        printf("*");
+      }
+      k++;
+    }
+    printf("\n");
+
+    // Adjust k for the next row
+    if (i == 0) {
+      k = n * n + 1;
+    } else if (i == 1) {
+      k = n * (n + 1) + 1;
+    } else if (i == rows - 2) {
+      k = n + 1;
     }
   }
 
-  printf("Array after moving zeros:\n");
-  for (i = 0; i < n; i++) {
-    printf("%d ", newArr[i]);
-  }
   return 0;
 }
